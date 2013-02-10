@@ -18,7 +18,7 @@ div#header {
 div#content {
 }
 div.welcome-banner {
-	background: url("../assets/images/silver-grey-gradient.gif") repeat-x scroll 0 0 #ffffff;
+	background: url("../images/silver-grey-gradient.gif") repeat-x scroll 0 0 #ffffff;
 	padding: 10 20;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;

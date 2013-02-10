@@ -1,0 +1,9 @@
+{
+	"name": "docpad-plugin-pathtoassets",
+	"version": "0.1.0",
+	"private": true,
+	"keywords": [
+		"docpad-plugin"
+	],
+	"main": "./pathtoassets.plugin.coffee"
+}
