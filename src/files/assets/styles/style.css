@@ -57,3 +57,8 @@ a:hover {
 	text-decoration: underline;
 	color: #0085aa;
 }
+a.howitworks {
+	color: #ff6600;
+	font-style: italic;
+	font-size: 1.2em;
+}
