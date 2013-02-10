@@ -1,0 +1,15 @@
+#!/bin/bash
+# generate a static site
+docpad generate --env static
+
+# go to out and deploy it as the root
+cd ./out && \
+remote_repo=`git config remote.origin.url` && \                                                    
+remote_branch="gh-pages" && \
+git init && \
+git add . && \
+git commit -m'build' && \
+git push $remote_repo master:$remote_branch --force && \
+rm -fr .git && \
+cd ../
+
