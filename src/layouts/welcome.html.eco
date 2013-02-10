@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="welcome-banner">
+	<h1>Study. Share. Learn. Together.</h1>
+	<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
+</div>
+<div class="features">
+	<div class="feature">
+		<img src="/assets/images/pile-of-books.png"/>
+		<h3>Infinite books!</h3>
+		<p>Study just one book, a collection of a dozen, or thousands.</p>
+	</div>
+	<div class="feature">
+		<img src="/assets/images/collaborate-hands.png"/>
+		<h3>Divide and conquer!</h3>
+		<p>Track your studying yourself, or divide the work among two, ten or a thousand peers.</p>
+	</div>
+	<div class="feature">
+		<img src="/assets/images/study-languages.png"/>
+		<h3>Any language!</h3>
+		<p>Books - and this site! - in English, French, Hebrew, Greek or any language you want.</p>
+	</div>
+	<!-- <div><%- @content %></div> -->
+</div>

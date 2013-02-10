@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title><%= @document.title %></title>
+	<%- @getBlock("meta").toHTML() %>
+	<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+</head>
+<body>
+	<div id="content">
+		<div id="container">
+			<div id="header">
+				<a class="header-element" id="header-logo" href="/">
+					<img alt="StudyMesg" src="/assets/images/studymeshlogo.jpg"/>
+				</a>
+			</div>
+			<div id="main">
+				<%- @content %>
+			</div>
+			<div id="footer">
+				<ul class="menubar">
+					<li><a href="/about">About Us</a></li>
+					<li><a href="http://blog.studymesh.com">Blog</a></li>
+					<li><a href="/legal/tos">Terms of Service</a></li>
+					<li><a href="/legal/privacy">Privacy</a></li>
+					<li><a href="/about/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<%- @getBlock("scripts").toHTML() %>
+</body>
+</html>

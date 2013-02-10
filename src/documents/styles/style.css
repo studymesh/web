@@ -1,0 +1,51 @@
+/* for IE */
+body {
+	text-align: center;
+}
+div#container {
+	width: 920px;
+	margin: 0 auto;
+	position: relative;
+	padding: 15px 0;
+	min-height: 300px;
+	text-align: left;
+}
+
+div#header {
+	height: 85px;
+}
+
+div#content {
+}
+div.welcome-banner {
+	background: url("../assets/images/silver-grey-gradient.gif") repeat-x scroll 0 0 #ffffff;
+	padding: 10 20;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+div#main {
+	background: none repeat scroll 0 0 white;
+	padding: 15px 5px;
+	min-height: 300px;
+}
+div#header img {
+	border: 0 none;
+}
+
+div.features {
+	text-align: center;
+}
+div.feature {
+	width: 270px;
+	float: left;
+	padding: 5 10;
+}
+ul.menubar {
+	list-style-type: none;
+	padding: 5 0 5 5;
+}
+ul.menubar li {
+	display: inline;
+	padding: 0 11 0 13;
+}
