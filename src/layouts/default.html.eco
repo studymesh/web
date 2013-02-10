@@ -8,7 +8,7 @@
 	<div id="content">
 		<div id="container">
 			<div id="header">
-				<a class="header-element" id="header-logo" href="/">
+				<a class="header-element" id="header-logo" href="<%= @document.pathToRoot %>/">
 					<img alt="StudyMesg" src="<%= @document.pathToAssets %>/images/studymeshlogo.jpg"/>
 				</a>
 			</div>
