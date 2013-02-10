@@ -20,7 +20,7 @@ module.exports = (BasePlugin) ->
 				pathToRoot = ['.']
 				if depth > 1 
 					pathToRoot.push('..') for i in [0..depth-2]
-					document.set('pathToRoot', pathToRoot.join('/'))
+				document.set('pathToRoot', pathToRoot.join('/'))
 				document.set('pathToAssets', pathToRoot.join('/')+'/assets')
 					
 				next()?
