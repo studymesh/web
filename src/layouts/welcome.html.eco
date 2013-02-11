@@ -20,7 +20,7 @@ layout: default
 	<div class="feature">
 		<img src="<%= @document.pathToAssets %>/images/study-languages.png"/>
 		<h3>Any language!</h3>
-		<p>Books - and this site! - in English, French, Hebrew, Greek or any language you want.</p>
+		<p>Books - and <i>this</i> site! - in English, French, Hebrew, Greek or any language you want.</p>
 	</div>
 	<!-- <div><%- @content %></div> -->
 </div>

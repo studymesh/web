@@ -1,9 +1,9 @@
 # Export Plugin
 module.exports = (BasePlugin) ->
 	# Define Plugin
-	class PathToAssets extends BasePlugin
+	class pathtoassets extends BasePlugin
 		# Plugin Name
-		name: 'pathToAssets'
+		name: 'pathtoassets'
 
 		# Parsing all files has finished
 		renderBefore: (opts,next) ->
