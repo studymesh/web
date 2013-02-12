@@ -1,0 +1,5 @@
+environments:
+    static:
+        plugins:
+            cleanurls:
+                enabled: false
