@@ -1,0 +1,16 @@
+{
+  "name": "studymesh-web",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "0.6.x",
+    "npm": "1.1.4"
+  },
+  "dependencies": {
+		"docpad-plugin-cleanurls": "2.4.x",
+		"docpad-plugin-eco": "2.0.x",
+		"docpad-plugin-livereload": "2.3.x",
+		"docpad-plugin-marked": "2.1.x",
+		"docpad-plugin-partials": "2.4.x"
+	}
+}
