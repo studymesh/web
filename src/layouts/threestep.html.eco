@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="threesteps">
+	<div class="stepone">
+		<%- @partial(@document.partone) %>
+	</div>
+	<div class="steptwo">
+		<%- @partial(@document.parttwo) %>
+	</div>
+	<div class="stepthree">
+		<%- @partial(@document.partthree) %>
+	</div>
+</div>
