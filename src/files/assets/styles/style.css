@@ -62,3 +62,17 @@ a.howitworks {
 	font-style: italic;
 	font-size: 1.2em;
 }
+
+div.step {
+	float:left;
+}
+div.step > p {
+	float:left;
+	width: 64%;
+}
+div.threesteps div.step {
+	width: 270px;
+}
+div.clear {
+	clear:both;
+}
