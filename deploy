@@ -4,7 +4,7 @@ docpad generate --env static
 
 # go to out and deploy it as the root
 cd ./out && \
-remote_repo=`git config remote.origin.url` && \                                                    
+remote_repo=`git config remote.origin.url` && \
 remote_branch="gh-pages" && \
 git init && \
 git add . && \
