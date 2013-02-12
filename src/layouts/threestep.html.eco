@@ -2,13 +2,22 @@
 layout: default
 ---
 <div class="threesteps">
-	<div class="stepone">
+	<div class="step stepone">
+		<h3>Step One</h3>
 		<%- @partial(@document.partone) %>
+		<img src="<%= @document.pathToAssets %>/images/green-right-arrow.png"/>
 	</div>
-	<div class="steptwo">
+	<div class="step steptwo">
+		<h3>Step Two</h3>
 		<%- @partial(@document.parttwo) %>
+		<img src="<%= @document.pathToAssets %>/images/green-right-arrow.png"/>
 	</div>
-	<div class="stepthree">
+	<div class="step stepthree">
+		<h3>Step Three</h3>
 		<%- @partial(@document.partthree) %>
 	</div>
+	<div class="clear"></div>
+</div>
+<div class="bottom-step">
+	<%- @content %>
 </div>
