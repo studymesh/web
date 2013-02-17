@@ -3,6 +3,12 @@
 	<title><%= @document.title %></title>
 	<%- @getBlock("meta").toHTML() %>
 	<%- @getBlock("styles").add([@document.pathToAssets+"/styles/style.css"]).toHTML() %>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		if (typeof jQuery == 'undefined') {
+		    document.write(unescape("%3Cscript src='<%= @document.pathToAssets %>/js/jquery-1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+		}
+	</script>	
 </head>
 <body>
 	<div id="content">
