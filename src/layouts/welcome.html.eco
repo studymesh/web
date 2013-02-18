@@ -1,6 +1,132 @@
 ---
 layout: default
 ---
+<!-- handle tab index correctly -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#recaptcha_response_field, #recaptcha_reload_btn, #recaptcha_switch_audio_btn, #recaptcha_whatsthis_btn").attr("tabindex", -1);
+	}); 
+</script>
+
+<!-- handle validation correctly -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		var step2handler;
+
+		$.fn.serializeHash = function() {
+			var hash = {};
+			this.find(":input").each(function(i,elm){
+				var name = $(elm).attr("name");
+				if (name) {
+					hash[name] = $(elm).val();
+				}
+			});
+			return(hash);
+		};
+
+		// validate all fields when exit them - when all validated, enable button
+		$("div#register-step-1 input.text").blur(function(){
+			var invalid = 1, input = $(this), val = input.val() || "", validator = input.attr("validation") || "",
+			div = input.closest("div"), button = div.find("input.button"), error = input.parent().find("div.error"), checkButton;
+			
+			checkButton = function() {
+				// then enable or disable button
+				if (invalid > 0) {
+					button.attr("disabled","disabled");
+				} else {
+					button.removeAttr("disabled");
+				}
+			};
+			
+			// check all required fields that they are OK
+			div.find("input.required").each(function(i,input){
+				input = $(input);
+				// is it filled in?
+				if (input.val() === null || input.val() === undefined || input.val().replace(/\s+/g,"") === "") {
+					invalid++;
+				}
+			});
+			// validate this field if required
+			if (val.replace(/\s+/g,"") !== "" && validator !== "") {
+				// check for validation
+				$.get(validator+val).done(function(data,status,xhr){
+					input.addClass("valid").removeClass("invalid");
+					error.text("").hide();
+					invalid--;
+				}).fail(function(jqxhr,status,err){
+					var data = "";
+					input.addClass("invalid").removeClass("valid");
+					// depends what the error is
+					data = jqxhr.status === 404 ? "Server error" : jqxhr.responseText;
+					error.text(data).css("display","inline");
+				}).always(function(){
+					checkButton();
+				});
+			} else {
+				input.removeClass("valid invalid");
+				error.text("").hide();
+				checkButton();
+			}
+		});
+		step2handler = function(){
+			var div = $(this).closest("div"), button = div.find("input.button"), checkButton, invalid = false;
+			// check that all checkboxes are checked, and all input text fields are non-blank
+			div.find("input:checkbox").each(function(i,input){
+				if (!$(input).is(":checked")) {
+					invalid = true;
+				}
+			});
+			div.find("input:text").each(function(i,input){
+				if (($(input).val()||"").replace(/\s+/g,"") === "") {
+					invalid = true;
+				}
+			});
+			// then enable or disable button
+			if (invalid > 0) {
+				button.attr("disabled","disabled");
+			} else {
+				button.removeAttr("disabled");
+			}
+		};
+
+		$("div#register-step-2 input:checkbox").bind("click",step2handler);
+		$("div#register-step-2 input:text").bind("blur",step2handler);
+		$("div#register-step-2 input:button").bind("click",function(){
+			// submit the registration
+			var form = $(this).closest("form");
+			$.ajax({
+				contentType: "application/json", method:"POST",
+				url:"/api/user",datatype:"json", data:JSON.stringify(form.serializeHash())
+			}).then(function(data,status,xhr){
+				$("p#register-message").text("Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!");
+			}).fail(function(jqxhr,status,err){
+				$("p#register-message").text("Unknown error");
+			}).always(function(){
+				$("div.sliding-panels").css("margin-left",-1000);
+			});
+			
+		});
+		
+
+		// validate recaptcha/accept TOS when exit them - when all validated, move on
+		// final start over
+		$("input#start-again-button").click(function(){
+			// clear fields
+			$("form#main-register-form input.text").each(function(i,input){
+				$(input).val("").removeClass("valid invalid").parent().find("div.error").text("").hide();
+			});
+			$("form#main-register-form input[type=checkbox]").removeAttr("checked");
+			// reset the recaptcha WITHOUT focusing it
+			Recaptcha.reload("t");
+			// slide back to first stage
+			$("div.sliding-panels").css("margin-left",0);
+		});
+		// enable slide forward-backward
+		
+	}); 
+</script>
+
+
 <div class="welcome-banner">
 	<div class="two-column">
 		<div class="sixty column">
@@ -9,21 +135,21 @@ layout: default
 			<p><a class="howitworks" href="howitworks">How It Works...</a></p>
 		</div>
 		<div class="forty column main-register">
-			<form method="post" action="/loginregister/register">
+			<form method="post" action="/loginregister/register" id="main-register-form">
 				<div class="sliding-panels-container">
 					<div class="sliding-panels">
 						<div id="register-step-1" class="register-step">
 							<dl><dd>
-								<input type="text" name="fullname" class="text linput required" placeholder="Your name"/>
+								<input type="text" name="fullname" class="text linput required" autofocus="autofocus" placeholder="Your name"/>
 							</dd></dl>
 							<dl><dd>
-								<input type="text" name="username" class="text linput required" placeholder="Username"/>
+								<input type="text" name="username" class="text linput required" placeholder="Username" validation="/api/signupcheck/user/"/>&nbsp;<div class="error">abc</div>
 							</dd></dl>
 							<dl><dd>
-								<input type="text" name="email" class="text linput required email" placeholder="Email"/>
+								<input type="text" name="email" class="text linput required email" placeholder="Email" validation="/api/signupcheck/email/"/>&nbsp;<div class="error"></div>
 							</dd></dl>
 							<dl><dd>
-								<input type="password" name="password" class="text linput required password" placeholder="Password"/>
+								<input type="password" name="password" class="text linput required password" placeholder="Password" validation="/api/signupcheck/password/"/>&nbsp;<div class="error"></div>
 							</dd></dl>
 							<input type="button" class="button" disabled="disabled" value="Sign Up for Free!"></button>
 						</div>
@@ -43,15 +169,15 @@ layout: default
 							  </noscript>
 							</dd></dl>
 							<dl><dd>
-								<input type="checkbox" name="accept-tos" class="linput required"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos">Terms of Service</a>.
+								<input type="checkbox" name="accept-tos" class="linput required" tabindex="-1"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos">Terms of Service</a>.
 							</dd></dl>
-							<input type="button" class="button" disabled="disabled" value="Sign Up!"></button>
+							<input type="button" class="button" disabled="disabled" value="Sign Up!" tabindex="-1"></button>
 						</div>
 						<div id="register-step-3" class="register-step">
 							<dd><dl>
-								<p>Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!</p>
+								<p id="register-message">Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!</p>
 							</dl></dd>
-							<input type="button" class="button" value="Start Again"></button>
+							<input type="button" id="start-again-button" class="button" value="Start Again" tabindex="-1"></button>
 						</div>
 						<div class="clear"></div>
 					</div>

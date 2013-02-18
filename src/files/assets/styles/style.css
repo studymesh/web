@@ -118,3 +118,17 @@ div.register-step {
 	width: 300px;
 	margin-right: 200px;
 }
+div.main-register input.invalid {
+	background: url("../images/red-x-mark.png") no-repeat scroll 0 0 #ffffff;
+	background-position: 98% center;
+}
+div.main-register input.valid {
+	background: url("../images/green-check-mark.png") no-repeat scroll 0 0 #ffffff;
+	background-position: 98% center;
+}
+div.main-register div.error {
+	display: none;
+	padding: 3px;
+	background-color: #ffff99;
+	font-size: 14px;
+}
