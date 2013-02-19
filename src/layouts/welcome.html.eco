@@ -57,7 +57,7 @@ layout: default
 					var data = "";
 					input.addClass("invalid").removeClass("valid");
 					// depends what the error is
-					data = jqxhr.status === 404 ? "Server error" : jqxhr.responseText;
+					data = jqxhr.status === 404 || jqxhr.status === 0 ? "Server error" : jqxhr.responseText;
 					error.text(data).css("display","inline");
 				}).always(function(){
 					checkButton();
