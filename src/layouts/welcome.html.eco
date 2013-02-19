@@ -132,7 +132,7 @@ layout: default
 		<div class="sixty column">
 			<h1>Study. Share. Learn. Together.</h1>
 			<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
-			<p><a class="howitworks" href="howitworks">How It Works...</a></p>
+			<p><a class="howitworks" href="./about/howitworks">How It Works...</a></p>
 		</div>
 		<div class="forty column main-register">
 			<form method="post" action="/loginregister/register" id="main-register-form">
