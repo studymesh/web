@@ -2,11 +2,11 @@
 <head>
 	<title><%= @document.title %></title>
 	<%- @getBlock("meta").toHTML() %>
-	<%- @getBlock("styles").add([@document.pathToAssets+"/styles/style.css"]).toHTML() %>
+	<%- @getBlock("styles").add(["/assets/styles/style.css"]).toHTML() %>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {
-		    document.write(unescape("%3Cscript src='<%= @document.pathToAssets %>/js/jquery-1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+		    document.write(unescape("%3Cscript src='/assets/js/jquery-1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));
 		}
 	</script>	
 </head>
@@ -14,8 +14,8 @@
 	<div id="content">
 		<div id="container">
 			<div id="header">
-				<a class="header-element" id="header-logo" href="<%= @document.pathToRoot %>/">
-					<img alt="StudyMesg" src="<%= @document.pathToAssets %>/images/studymeshlogo.jpg"/>
+				<a class="header-element" id="header-logo" href="/">
+					<img alt="StudyMesh" src="/assets/images/studymeshlogo.jpg"/>
 				</a>
 			</div>
 			<div id="main">
@@ -23,12 +23,12 @@
 			</div>
 			<div id="footer">
 				<ul class="menubar">
-					<li><a href="<%= @document.pathToRoot %>/about">About Us</a></li>
+					<li><a href="/about">About Us</a></li>
 					<li><a href="http://blog.studymesh.com">Blog</a></li>
-					<li><a href="<%= @document.pathToRoot %>/pricing">Plans &amp; Pricing</a></li>
-					<li><a href="<%= @document.pathToRoot %>/legal/tos">Terms of Service</a></li>
-					<li><a href="<%= @document.pathToRoot %>/legal/privacy">Privacy</a></li>
-					<li><a href="<%= @document.pathToRoot %>/about/contact">Contact</a></li>
+					<li><a href="/pricing">Plans &amp; Pricing</a></li>
+					<li><a href="/legal/tos">Terms of Service</a></li>
+					<li><a href="/legal/privacy">Privacy</a></li>
+					<li><a href="/about/contact">Contact</a></li>
 				</ul>
 			</div>
 		</div>
