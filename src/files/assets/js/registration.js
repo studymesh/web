@@ -57,7 +57,7 @@ $(document).ready(function() {
 	showError = function(e,error,form) {
 	  // the error should be either a text message, which we show, or an object, which shows multiple
 	  var msg = json.parse(e), tmp;
-	  if (typeof(e) !== "string") {
+	  if (typeof(msg) !== "string") {
 			// extract the message
 			msg = e.message || "Error";
 			// if it is a string, then present as is; if it is an array, take the parts
@@ -68,8 +68,8 @@ $(document).ready(function() {
 						tmp.push(m.password);
 					}
 				});
+				msg = tmp.join(", ");
 			}
-			msg = tmp.join(", ");
 	  }
 	  //error.attr("langkey",msg).i18n().removeClass("status-inactive").addClass("status-active").show();
 	  error.attr("langkey",msg).text(msg).css("display","inline");
