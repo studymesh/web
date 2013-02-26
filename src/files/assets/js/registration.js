@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 	showError = function(e,error,form) {
 	  // the error should be either a text message, which we show, or an object, which shows multiple
-	  var msg = json.stringify(e), tmp;
+	  var msg = json.parse(e), tmp;
 	  if (typeof(e) !== "string") {
 			// extract the message
 			msg = e.message || "Error";
