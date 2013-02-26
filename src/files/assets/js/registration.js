@@ -1,6 +1,6 @@
-/*global jQuery, $, document, Recaptcha */
+/*global jQuery, $, document, Recaptcha, JSON */
 $(document).ready(function() {
-	var step2handler, showError;
+	var step2handler, showError, json;
 
 	$.fn.serializeHash = function() {
 		var hash = {};
@@ -12,13 +12,52 @@ $(document).ready(function() {
 		});
 		return(hash);
 	};
+	
+	/*global define */
+  json = {
+    parse: function(json) {
+      var data;
+      switch(typeof(json)) {
+        case "string":
+          try {
+            data = JSON.parse(json);
+          } catch (e) {
+            data = json;
+          }
+          break;
+        case "object":
+          data = json;
+          break;
+        default:
+          data = null;
+      }
+      return(data);
+    },
+    stringify: function(json) {
+      var data;
+      switch(typeof(json)) {
+        case "object":
+          try {
+            data = JSON.stringify(json);
+          } catch (e) {
+            data = null;
+          }
+          break;
+        case "string":
+          data = json;
+          break;
+        default:
+          data = null;
+      }
+      return(data);
+    }
+  };
+	
 
 	showError = function(e,error,form) {
 	  // the error should be either a text message, which we show, or an object, which shows multiple
-	  var msg, tmp;
-	  if (typeof(e) === "string") {
-	    msg = e;
-	  } else {
+	  var msg = json.stringify(e), tmp;
+	  if (typeof(e) !== "string") {
 			// extract the message
 			msg = e.message || "Error";
 			// if it is a string, then present as is; if it is an array, take the parts
@@ -109,7 +148,7 @@ $(document).ready(function() {
 		var form = $(this).closest("form");
 		$.ajax({
 			contentType: "application/json", method:"POST",
-			url:"/api/user",datatype:"json", data:JSON.stringify(form.serializeHash())
+			url:"/api/user",datatype:"json", data:json.stringify(form.serializeHash())
 		}).then(function(data,status,xhr){
 			$("p#register-message").text("Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!");
 		}).fail(function(jqxhr,status,err){

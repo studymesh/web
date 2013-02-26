@@ -9,6 +9,7 @@ layout: default
 </script>
 
 <!-- handle validation correctly -->
+<script type="text/javascript" src="<%= @document.pathToAssets %>/js/json2.js"></script>
 <script type="text/javascript" src="<%= @document.pathToAssets %>/js/registration.js"></script>
 
 
