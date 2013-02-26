@@ -59,7 +59,7 @@ $(document).ready(function() {
 	  var msg = json.parse(e), tmp;
 	  if (typeof(msg) !== "string") {
 			// extract the message
-			msg = e.message || "Error";
+			msg = msg.message || "Error";
 			// if it is a string, then present as is; if it is an array, take the parts
 			if (typeof(msg) !== "string") {
 				tmp = [];
