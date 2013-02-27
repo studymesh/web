@@ -55,7 +55,7 @@ layout: default
 							  </noscript>
 							</dd></dl>
 							<dl><dd>
-								<input type="checkbox" name="accept-tos" class="linput required" tabindex="-1"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos" tabindex="-1">Terms of Service</a>.
+								<input type="checkbox" name="acceptTos" class="linput required" tabindex="-1"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos" tabindex="-1">Terms of Service</a>.
 							</dd></dl>
 							<input type="button" class="button" disabled="disabled" value="Sign Up!" tabindex="-1"></button>
 						</div>
