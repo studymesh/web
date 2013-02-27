@@ -29,7 +29,7 @@ layout: default
 								<input type="text" name="fullname" class="text linput required" autofocus="autofocus" placeholder="Your name"/>
 							</dd></dl>
 							<dl><dd>
-								<input type="text" name="username" class="text linput required" placeholder="Username" validation="/api/signupcheck/user/"/>&nbsp;<div class="error">abc</div>
+								<input type="text" name="name" class="text linput required" placeholder="Username" validation="/api/signupcheck/user/"/>&nbsp;<div class="error">abc</div>
 							</dd></dl>
 							<dl><dd>
 								<input type="text" name="email" class="text linput required email" placeholder="Email" validation="/api/signupcheck/email/"/>&nbsp;<div class="error"></div>
