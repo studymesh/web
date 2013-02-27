@@ -198,6 +198,5 @@ $(document).ready(function() {
 	$("form#main-register-form input[type=text]").val("");
 	$("form#main-register-form input[type=password]").val("");
 	$("form#main-register-form input[type=checkbox]").removeAttr("checked");
-	$("form#main-register-form input[type=button]").attr("disabled","disabled");
-	
+	$("form#main-register-form input[type=button]:not(#start-again-button)").attr("disabled","disabled");
 }); 
