@@ -1,4 +1,12 @@
 /*global jQuery, $, document, Recaptcha, JSON */
+// a simple list of properties in English is good enough for now
+var dictionary = {
+	conflict: "Already in use",
+	reserved: "Reserved word",
+	invalidemail: "Invalid email",
+	minpasslength: "Must be at least 8 characters"
+};
+
 $(document).ready(function() {
 	var step2handler, showError, json;
 
@@ -72,7 +80,7 @@ $(document).ready(function() {
 			}
 	  }
 	  //error.attr("langkey",msg).i18n().removeClass("status-inactive").addClass("status-active").show();
-	  error.attr("langkey",msg).text(msg).css("display","inline");
+	  error.attr("langkey",msg).text(dictionary[msg] || msg).css("display","inline");
 	};
 	
 	// validate all fields when exit them - when all validated, enable button

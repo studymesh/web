@@ -128,6 +128,7 @@ div.main-register input.valid {
 }
 div.main-register div.error {
 	display: none;
+	position: fixed;
 	padding: 3px;
 	background-color: #ffff99;
 	font-size: 14px;
