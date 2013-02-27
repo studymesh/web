@@ -128,6 +128,17 @@ $(document).ready(function() {
 			checkButton();
 		}
 	});
+	$("div#register-step-1 input:button").bind("click",function(){
+		// move to the next step if no required are unfilled
+		var form = $(this).closest("form"), unfilled = form.find('div#register-step-1 input.required').filter(function(){
+			return($(this).val()==="");
+		}).length;
+		if (unfilled <= 0) {
+			$("div.sliding-panels").css("margin-left",-500);
+		}
+	});
+
+
 	step2handler = function(){
 		var div = $(this).closest("div"), button = div.find("input.button"), invalid = false;
 		// check that all checkboxes are checked, and all input text fields are non-blank
@@ -181,6 +192,12 @@ $(document).ready(function() {
 		// slide back to first stage
 		$("div.sliding-panels").css("margin-left",0);
 	});
-	// enable slide forward-backward
-		
+	
+	
+	// clear the fields on entry
+	$("form#main-register-form input[type=text]").val("");
+	$("form#main-register-form input[type=password]").val("");
+	$("form#main-register-form input[type=checkbox]").removeAttr("checked");
+	$("form#main-register-form input[type=button]").attr("disabled","disabled");
+	
 }); 
