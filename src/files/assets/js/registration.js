@@ -4,7 +4,10 @@ var dictionary = {
 	conflict: "Already in use",
 	reserved: "Reserved word",
 	invalidemail: "Invalid email",
-	minpasslength: "Must be at least 8 characters"
+	minpasslength: "Must be at least 8 characters",
+	passwordminpasslength: "Must be at least 8 characters",
+	accepttos: "You must accept the Terms of Service",
+	recaptchainvalid: "Invalid Recaptcha"
 };
 
 $(document).ready(function() {
@@ -65,21 +68,22 @@ $(document).ready(function() {
 	showError = function(e,error,form) {
 	  // the error should be either a text message, which we show, or an object, which shows multiple
 	  var msg = json.parse(e), tmp;
-	  if (typeof(msg) !== "string") {
+	  if (typeof(msg) === "string") {
+			msg = dictionary[msg] || "Uh oh, we had an error!";
+		} else {
 			// extract the message
 			msg = msg.message || "Error";
 			// if it is a string, then present as is; if it is an array, take the parts
 			if (typeof(msg) !== "string") {
 				tmp = [];
 				$.each(msg,function(i,m) {
-					if (m && m.password) {
-						tmp.push(m.password);
-					}
+					$.each(m,function(key,val){
+						tmp.push(dictionary[key+val] || dictionary[val] || val);
+					});
 				});
 				msg = tmp.join(", ");
 			}
 	  }
-	  //error.attr("langkey",msg).i18n().removeClass("status-inactive").addClass("status-active").show();
 	  error.attr("langkey",msg).text(dictionary[msg] || msg).css("display","inline");
 	};
 	
@@ -118,7 +122,6 @@ $(document).ready(function() {
 				// depends what the error is
 				data = jqxhr.status === 404 || jqxhr.status === 0 ? "Server error" : jqxhr.responseText;
 				showError(data,error);
-				//error.text(data).css("display","inline");
 			}).always(function(){
 				checkButton();
 			});
@@ -164,16 +167,18 @@ $(document).ready(function() {
 	$("div#register-step-2 input:text").bind("blur",step2handler);
 	$("div#register-step-2 input:button").bind("click",function(){
 		// submit the registration
-		var form = $(this).closest("form");
+		var form = $(this).closest("form"), error = $(this).closest("div").find("div.error");
 		$.ajax({
 			contentType: "application/json", method:"POST",
 			url:"/api/user",datatype:"json", data:json.stringify(form.serializeHash())
 		}).then(function(data,status,xhr){
 			$("p#register-message").text("Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!");
-		}).fail(function(jqxhr,status,err){
-			$("p#register-message").text("Unknown error");
-		}).always(function(){
 			$("div.sliding-panels").css("margin-left",-1000);
+		}).fail(function(jqxhr,status,err){
+			// report the error message
+			// depends what the error is
+			var data = jqxhr.status === 404 || jqxhr.status === 0 ? "Server error" : jqxhr.responseText;
+			showError(data,error);
 		});
 			
 	});

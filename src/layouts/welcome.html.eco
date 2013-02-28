@@ -57,6 +57,7 @@ layout: default
 							<dl><dd>
 								<input type="checkbox" name="acceptTos" class="linput required" tabindex="-1"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos" tabindex="-1">Terms of Service</a>.
 							</dd></dl>
+							<dl><dd style="height: 13px; margin-left: 10px; padding: 5px; color: red;"><div class="error" style="margin-top: 0px;">abc</div></dd></dl>
 							<input type="button" class="button" disabled="disabled" value="Sign Up!" tabindex="-1"></button>
 						</div>
 						<div id="register-step-3" class="register-step">
