@@ -33,6 +33,6 @@
 			</div>
 		</div>
 	</div>
-	<%- @getBlock("scripts").toHTML() %>
+	<%- @getBlock("scripts").add(["/assets/js/ga.js"]).toHTML() %>
 </body>
 </html>
