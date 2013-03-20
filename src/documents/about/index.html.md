@@ -2,6 +2,8 @@
 layout: default
 title: About Us
 ---
+We love *knowledge*. We love *learning*. We love *sharing*.
+
 StudyMesh was created by Avi Deitcher to ease collaborative learning.
 
 In the summer of 2009, a great teacher, [Rabbi Yehuda Amital](http://en.wikipedia.org/wiki/Yehuda_Amital), passed away. He had thousands of students from decades of teaching all over the world, Tokyo to Tel Aviv, Montreal to Melbourne, Los Angeles to London. These students wanted to honour his memory by studying together, but had no easy way to collaborate worldwide.
@@ -12,4 +14,4 @@ In the years since, many people, both those who had participated and those who h
 
 StudyMesh was born.
 
-You, too, can set up your own collaborative Study for any purpose at all. Just take the first step and [sign up for free](../../loginregister/register).
+You, too, can set up your own collaborative Study for any purpose at all. Just take the first step and [sign up for free](/).
