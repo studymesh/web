@@ -134,3 +134,27 @@ div.main-register div.error {
 	font-size: 14px;
 	margin-top: 10px;
 }
+div.header-element {
+	float: left;
+	margin: 16px 3px;
+	padding: 5px 0;
+}
+div#login-register-bar {
+	float: right;
+	clear: right;
+}
+div.navbar ul {
+    border-color: #A4A4A4;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    list-style-type: none;
+    padding: 5px 0;
+    white-space: nowrap;
+		margin: 0;
+}
+div.navbar ul li {
+    display: inline;
+    padding: 0 11px 0 13px;
+}
