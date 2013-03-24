@@ -2,6 +2,8 @@
 <head>
 	<title><%= @document.title %></title>
 	<%- @getBlock("meta").toHTML() %>
+	<meta name="description" content="StudyMesh is a utility that allows people to study and collaborate in gaining and sharing knowledge."/>
+	<meta name="google-site-verification" content="wZ35UIQTW6ar7CHD5rZBvrcpPUsMgSheYRx8Vstzg0A" />	
 	<%- @getBlock("styles").add(["/assets/styles/style.css"]).toHTML() %>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
