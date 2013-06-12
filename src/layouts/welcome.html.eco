@@ -8,9 +8,10 @@ layout: default
 	}); 
 </script>
 
-<!-- handle validation correctly -->
 <script type="text/javascript" src="<%= @document.pathToAssets %>/js/json2.js"></script>
 <script type="text/javascript" src="<%= @document.pathToAssets %>/js/registration.js"></script>
+
+<!-- handle validation correctly -->
 
 
 <div class="welcome-banner">
@@ -39,7 +40,7 @@ layout: default
 							</dd></dl>
 							<input type="button" class="button" disabled="disabled" value="Sign Up for Free!"></button>
 						</div>
-						<div id="register-step-2" class="register-step">
+						<div id="register-step-2" class="register-step invisible">
 							<dl><dd>
 								<!-- Recaptcha here -->
 							  <script type="text/javascript"
@@ -60,7 +61,7 @@ layout: default
 							<dl><dd style="height: 13px; margin-left: 10px; padding: 5px; color: red;"><div class="error" style="margin-top: 0px;">abc</div></dd></dl>
 							<input type="button" class="button" disabled="disabled" value="Sign Up!" tabindex="-1"></button>
 						</div>
-						<div id="register-step-3" class="register-step">
+						<div id="register-step-3" class="register-step invisible">
 							<dd><dl>
 								<p id="register-message">Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!</p>
 							</dl></dd>

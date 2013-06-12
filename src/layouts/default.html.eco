@@ -23,13 +23,13 @@
 				<div class="header-element navbar" id="login-register-bar">
 					<ul>
 						<li>
-							<a id="register-link" href="/">
-								Register
+							<a id="login-link" href="/loginregister/login">
+								Login
 							</a>
 						</li>
 						<li>
-							<a id="login-link" href="/loginregister/login">
-								Login
+							<a id="register-link" href="/">
+								Register
 							</a>
 						</li>
 					</ul>

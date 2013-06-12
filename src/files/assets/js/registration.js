@@ -133,11 +133,13 @@ $(document).ready(function() {
 	});
 	$("div#register-step-1 input:button").bind("click",function(){
 		// move to the next step if no required are unfilled
-		var form = $(this).closest("form"), unfilled = form.find('div#register-step-1 input.required').filter(function(){
+		var step = $(this).closest("div.register-step"), nextStep = step.next("div.register-step"),
+		form = $(this).closest("form"), unfilled = form.find('div#register-step-1 input.required').filter(function(){
 			return($(this).val()==="");
 		}).length;
 		if (unfilled <= 0) {
-			$("div.sliding-panels").css("margin-left",-500);
+			step.hide("fast");
+			nextStep.show("fast");
 		}
 	});
 
@@ -167,13 +169,15 @@ $(document).ready(function() {
 	$("div#register-step-2 input:text").bind("blur",step2handler);
 	$("div#register-step-2 input:button").bind("click",function(){
 		// submit the registration
-		var form = $(this).closest("form"), error = $(this).closest("div").find("div.error");
+		var form = $(this).closest("form"), step = $(this).closest("div.register-step"), nextStep = step.next("div.register-step"),
+		error = $(this).closest("div").find("div.error");
 		$.ajax({
 			contentType: "application/json", method:"POST",
 			url:"/api/user",datatype:"json", data:json.stringify(form.serializeHash())
 		}).then(function(data,status,xhr){
 			$("p#register-message").text("Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!");
-			$("div.sliding-panels").css("margin-left",-1000);
+			step.hide("fast");
+			nextStep.show("fast");
 		}).fail(function(jqxhr,status,err){
 			// report the error message
 			// depends what the error is
@@ -187,15 +191,22 @@ $(document).ready(function() {
 	// validate recaptcha/accept TOS when exit them - when all validated, move on
 	// final start over
 	$("input#start-again-button").click(function(){
+		var form = $(this).closest("form");
 		// clear fields
-		$("form#main-register-form input.text").each(function(i,input){
+		form.find("input.text").each(function(i,input){
 			$(input).val("").removeClass("valid invalid").parent().find("div.error").text("").hide();
 		});
-		$("form#main-register-form input[type=checkbox]").removeAttr("checked");
+		form.find("input[type=checkbox]").removeAttr("checked");
 		// reset the recaptcha WITHOUT focusing it
 		Recaptcha.reload("t");
 		// slide back to first stage
-		$("div.sliding-panels").css("margin-left",0);
+		form.find("div.register-step").each(function (i,d) {
+			d = $(d);
+			if (d.is(":visible")) {
+				d.hide("fast");
+			}
+		});
+		form.find("div.register-step:first").show("fast");
 	});
 	
 	
