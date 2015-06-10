@@ -23,13 +23,8 @@
 				<div class="header-element navbar" id="login-register-bar">
 					<ul>
 						<li>
-							<a id="login-link" href="/loginregister/login">
-								Login
-							</a>
-						</li>
-						<li>
-							<a id="register-link" href="/">
-								Register
+							<a id="login-link" href="http://app.studymesh.com/login">
+								Login / Register
 							</a>
 						</li>
 					</ul>
