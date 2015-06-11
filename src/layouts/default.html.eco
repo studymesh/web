@@ -6,12 +6,13 @@
 	<meta name="google-site-verification" content="wZ35UIQTW6ar7CHD5rZBvrcpPUsMgSheYRx8Vstzg0A" />	
 	<meta name="msvalidate.01" content="C152DD25E6C6E8B04E0890173AA3A835" />
 	<%- @getBlock("styles").add(["/assets/styles/style.css"]).toHTML() %>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {
 		    document.write(unescape("%3Cscript src='/assets/js/jquery-1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));
 		}
 	</script>	
+	-->
 </head>
 <body>
 	<div id="content">
@@ -37,7 +38,6 @@
 			<div id="footer">
 				<ul class="menubar">
 					<li><a href="/about">About Us</a></li>
-					<li><a href="http://blog.studymesh.com">Blog</a></li>
 					<li><a href="/pricing">Plans &amp; Pricing</a></li>
 					<li><a href="/legal/tos">Terms of Service</a></li>
 					<li><a href="/legal/privacy">Privacy</a></li>

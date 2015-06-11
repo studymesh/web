@@ -8,10 +8,6 @@ layout: default
 	}); 
 </script>
 
-<script type="text/javascript" src="<%= @document.pathToAssets %>/js/json2.js"></script>
-<script type="text/javascript" src="<%= @document.pathToAssets %>/js/registration.js"></script>
-
-<!-- handle validation correctly -->
 
 
 <div class="welcome-banner">
@@ -20,57 +16,6 @@ layout: default
 			<h1>Study. Share. Learn. Together.</h1>
 			<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
 			<p><a class="howitworks" href="./about/howitworks">How It Works...</a></p>
-		</div>
-		<div class="forty column main-register">
-			<form method="post" action="/loginregister/register" id="main-register-form">
-				<div class="sliding-panels-container">
-					<div class="sliding-panels">
-						<div id="register-step-1" class="register-step">
-							<dl><dd>
-								<input type="text" name="fullname" class="text linput required" autofocus="autofocus" placeholder="Your name"/>
-							</dd></dl>
-							<dl><dd>
-								<input type="text" name="name" class="text linput required" placeholder="Username" validation="/api/signupcheck/user/"/>&nbsp;<div class="error">abc</div>
-							</dd></dl>
-							<dl><dd>
-								<input type="text" name="email" class="text linput required email" placeholder="Email" validation="/api/signupcheck/email/"/>&nbsp;<div class="error"></div>
-							</dd></dl>
-							<dl><dd>
-								<input type="password" name="password" class="text linput required password" placeholder="Password" validation="/api/signupcheck/password/"/>&nbsp;<div class="error"></div>
-							</dd></dl>
-							<input type="button" class="button" disabled="disabled" value="Sign Up for Free!"></button>
-						</div>
-						<div id="register-step-2" class="register-step invisible">
-							<dl><dd>
-								<!-- Recaptcha here -->
-							  <script type="text/javascript"
-							     src="http://www.google.com/recaptcha/api/challenge?k=6LdbRs8SAAAAAG6y6DOFx__Q5PxmQI2fkBlJNIYd">
-							  </script>
-							  <noscript>
-							     <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LdbRs8SAAAAAG6y6DOFx__Q5PxmQI2fkBlJNIYd"
-							         height="300" width="500" frameborder="0"></iframe><br>
-							     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-							     </textarea>
-							     <input type="hidden" name="recaptcha_response_field"
-							         value="manual_challenge">
-							  </noscript>
-							</dd></dl>
-							<dl><dd>
-								<input type="checkbox" name="acceptTos" class="linput required" tabindex="-1"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos" tabindex="-1">Terms of Service</a>.
-							</dd></dl>
-							<dl><dd style="height: 13px; margin-left: 10px; padding: 5px; color: red;"><div class="error" style="margin-top: 0px;">abc</div></dd></dl>
-							<input type="button" class="button" disabled="disabled" value="Sign Up!" tabindex="-1"></button>
-						</div>
-						<div id="register-step-3" class="register-step invisible">
-							<dd><dl>
-								<p id="register-message">Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!</p>
-							</dl></dd>
-							<input type="button" id="start-again-button" class="button" value="Start Again" tabindex="-1"></button>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-			</form>
 		</div>
 		<div class="clear"></div>
 	</div>
