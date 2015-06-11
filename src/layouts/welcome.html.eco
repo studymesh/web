@@ -1,21 +1,17 @@
 ---
 layout: default
 ---
-<!-- handle tab index correctly -->
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#recaptcha_response_field, #recaptcha_reload_btn, #recaptcha_switch_audio_btn, #recaptcha_whatsthis_btn").attr("tabindex", -1);
-	}); 
-</script>
-
 
 
 <div class="welcome-banner">
-	<div class="two-column">
-		<div class="sixty column">
+	<div>
+		<div>
 			<h1>Study. Share. Learn. Together.</h1>
 			<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
 			<p><a class="howitworks" href="./about/howitworks">How It Works...</a></p>
+		</div>
+		<div>
+			<a href="http://app.studymesh.com/register" class="btn btn-lg btn-primary">Sign Up for Free!</a>
 		</div>
 		<div class="clear"></div>
 	</div>
@@ -36,5 +32,6 @@ layout: default
 		<h3>Any language!</h3>
 		<p>Books - and <i>this</i> site! - in English, French, Hebrew, Greek or any language you want.</p>
 	</div>
+	<div class="clear"></div>
 	<!-- <div><%- @content %></div> -->
 </div>
