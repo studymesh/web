@@ -1,0 +1,95 @@
+---
+layout: default
+---
+<!-- handle tab index correctly -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#recaptcha_response_field, #recaptcha_reload_btn, #recaptcha_switch_audio_btn, #recaptcha_whatsthis_btn").attr("tabindex", -1);
+	}); 
+</script>
+
+	<!-- <script type="text/javascript" src="<%= @document.pathToAssets %>/js/json2.js"></script>
+<script type="text/javascript" src="<%= @document.pathToAssets %>/js/registration.js"></script> -->
+
+<!-- handle validation correctly -->
+
+
+<div class="welcome-banner">
+	<div class="two-column">
+		<div class="sixty column">
+			<h1>Study. Share. Learn. Together.</h1>
+			<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
+			<p><a class="howitworks" href="./about/howitworks">How It Works...</a></p>
+		</div>
+		<div class="forty column main-register">
+			<form method="post" action="/loginregister/register" id="main-register-form">
+				<div class="sliding-panels-container">
+					<div class="sliding-panels">
+						<div id="register-step-1" class="register-step">
+							<dl><dd>
+								<input type="text" name="fullname" class="text linput required" autofocus="autofocus" placeholder="Your name"/>
+							</dd></dl>
+							<dl><dd>
+								<input type="text" name="name" class="text linput required" placeholder="Username" validation="/api/signupcheck/user/"/>&nbsp;<div class="error">abc</div>
+							</dd></dl>
+							<dl><dd>
+								<input type="text" name="email" class="text linput required email" placeholder="Email" validation="/api/signupcheck/email/"/>&nbsp;<div class="error"></div>
+							</dd></dl>
+							<dl><dd>
+								<input type="password" name="password" class="text linput required password" placeholder="Password" validation="/api/signupcheck/password/"/>&nbsp;<div class="error"></div>
+							</dd></dl>
+							<input type="button" class="button" disabled="disabled" value="Sign Up for Free!"></button>
+						</div>
+						<div id="register-step-2" class="register-step invisible">
+							<dl><dd>
+								<!-- Recaptcha here -->
+							  <script type="text/javascript"
+							     src="http://www.google.com/recaptcha/api/challenge?k=6LdbRs8SAAAAAG6y6DOFx__Q5PxmQI2fkBlJNIYd">
+							  </script>
+							  <noscript>
+							     <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LdbRs8SAAAAAG6y6DOFx__Q5PxmQI2fkBlJNIYd"
+							         height="300" width="500" frameborder="0"></iframe><br>
+							     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+							     </textarea>
+							     <input type="hidden" name="recaptcha_response_field"
+							         value="manual_challenge">
+							  </noscript>
+							</dd></dl>
+							<dl><dd>
+								<input type="checkbox" name="acceptTos" class="linput required" tabindex="-1"/>I have read, understood and agree to the StudyMesh <a href="./legal/tos" tabindex="-1">Terms of Service</a>.
+							</dd></dl>
+							<dl><dd style="height: 13px; margin-left: 10px; padding: 5px; color: red;"><div class="error" style="margin-top: 0px;">abc</div></dd></dl>
+							<input type="button" class="button" disabled="disabled" value="Sign Up!" tabindex="-1"></button>
+						</div>
+						<div id="register-step-3" class="register-step invisible">
+							<dd><dl>
+								<p id="register-message">Registration is almost complete! Please check your inbox to confirm your email, and you are ready to go!</p>
+							</dl></dd>
+							<input type="button" id="start-again-button" class="button" value="Start Again" tabindex="-1"></button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="features">
+	<div class="feature">
+		<img src="<%= @document.pathToAssets %>/images/pile-of-books.png"/>
+		<h3>Infinite books!</h3>
+		<p>Study just one book, a collection of a dozen, or thousands.</p>
+	</div>
+	<div class="feature">
+		<img src="<%= @document.pathToAssets %>/images/collaborate-hands.png"/>
+		<h3>Divide and conquer!</h3>
+		<p>Track your studying yourself, or divide the work among two, ten or a thousand peers.</p>
+	</div>
+	<div class="feature">
+		<img src="<%= @document.pathToAssets %>/images/study-languages.png"/>
+		<h3>Any language!</h3>
+		<p>Books - and <i>this</i> site! - in English, French, Hebrew, Greek or any language you want.</p>
+	</div>
+	<!-- <div><%- @content %></div> -->
+</div>
