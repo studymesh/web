@@ -5,7 +5,7 @@
 	<meta name="description" content="StudyMesh is a utility that allows people to study and collaborate in gaining and sharing knowledge."/>
 	<meta name="google-site-verification" content="wZ35UIQTW6ar7CHD5rZBvrcpPUsMgSheYRx8Vstzg0A" />	
 	<meta name="msvalidate.01" content="C152DD25E6C6E8B04E0890173AA3A835" />
-	<%- @getBlock("styles").add(["/assets/styles/style.css"]).toHTML() %>
+	<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {
@@ -19,7 +19,7 @@
 		<div id="container">
 			<div id="header">
 				<a class="header-element" id="header-logo" href="/">
-					<img alt="StudyMesh" src="/assets/images/studymeshlogo.jpg"/>
+					<img alt="StudyMesh" src="/images/studymeshlogo.jpg"/>
 				</a>
 				<div class="header-element navbar" id="login-register-bar">
 					<ul>
@@ -46,6 +46,6 @@
 			</div>
 		</div>
 	</div>
-	<%- @getBlock("scripts").add(["/assets/js/ga.js"]).toHTML() %>
+	<%- @getBlock("scripts").add(["/js/ga.js"]).toHTML() %>
 </body>
 </html>
