@@ -8,4 +8,4 @@ Email us at [help@studymesh.com](mailto:help@studymesh.com)
   
 	
 
-Join StudyMesh for free. [Sign up here](../../loginregister/register).
+Join StudyMesh for free. [Sign up here](http://app.studymesh.com/register).
