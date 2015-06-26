@@ -3,10 +3,10 @@ body {
 	text-align: center;
 }
 div#container {
-	width: 920px;
+	/* width: 920px; */
 	margin: 0 auto;
 	position: relative;
-	padding: 15px 0;
+	padding: 15px 30px;
 	min-height: 300px;
 	text-align: left;
 }

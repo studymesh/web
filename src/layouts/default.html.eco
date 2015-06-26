@@ -16,35 +16,35 @@
 	-->
 </head>
 <body>
-	<div id="content">
-		<div id="container">
-			<div id="header">
+	<div id="container" class="container-fluid">
+		<div id="header" class="row">
+			<div class="col-xs-3">
 				<a class="header-element" id="header-logo" href="/">
 					<img alt="StudyMesh" src="/images/studymeshlogo.jpg"/>
 				</a>
-				<div class="header-element navbar" id="login-register-bar">
-					<ul>
-						<li>
-							<a id="login-link" href="http://app.studymesh.com/login">
-								Login / Register
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="clear"></div>
 			</div>
-			<div id="main">
-				<%- @content %>
-			</div>
-			<div id="footer">
-				<ul class="menubar">
-					<li><a href="/about">About Us</a></li>
-					<li><a href="/pricing">Plans &amp; Pricing</a></li>
-					<li><a href="/legal/tos">Terms of Service</a></li>
-					<li><a href="/legal/privacy">Privacy</a></li>
-					<li><a href="/about/contact">Contact</a></li>
+			<div class="header-element navbar col-xs-4 col-xs-offset-4" id="login-register-bar">
+				<ul class="pull-right">
+					<li>
+						<a id="login-link" href="http://app.studymesh.com/login">
+							Login / Register
+						</a>
+					</li>
 				</ul>
 			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="main">
+			<%- @content %>
+		</div>
+		<div id="footer">
+			<ul class="menubar">
+				<li><a href="/about">About Us</a></li>
+				<li><a href="/pricing">Plans &amp; Pricing</a></li>
+				<li><a href="/legal/tos">Terms of Service</a></li>
+				<li><a href="/legal/privacy">Privacy</a></li>
+				<li><a href="/about/contact">Contact</a></li>
+			</ul>
 		</div>
 	</div>
 	<script>
