@@ -2,6 +2,7 @@
 <head>
 	<title><%= @document.title %></title>
 	<%- @getBlock("meta").toHTML() %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="StudyMesh is a utility that allows people to study and collaborate in gaining and sharing knowledge."/>
 	<meta name="google-site-verification" content="wZ35UIQTW6ar7CHD5rZBvrcpPUsMgSheYRx8Vstzg0A" />	
 	<meta name="msvalidate.01" content="C152DD25E6C6E8B04E0890173AA3A835" />
@@ -18,12 +19,12 @@
 <body>
 	<div id="container" class="container-fluid">
 		<div id="header" class="row">
-			<div class="col-xs-3">
+			<div class="col-sm-3">
 				<a class="header-element" id="header-logo" href="/">
 					<img alt="StudyMesh" src="/images/studymeshlogo.jpg"/>
 				</a>
 			</div>
-			<div class="header-element navbar col-xs-4 col-xs-offset-4" id="login-register-bar">
+			<div class="header-element navbar col-sm-4 col-sm-offset-4" id="login-register-bar">
 				<ul class="pull-right">
 					<li>
 						<a id="login-link" href="http://app.studymesh.com/login">

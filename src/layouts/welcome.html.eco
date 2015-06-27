@@ -3,30 +3,36 @@ layout: default
 ---
 
 
-<div class="welcome-banner row">
-	<div class="">
-		<h1>Study. Share. Learn. Together.</h1>
-		<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
-		<p><a class="howitworks" href="./about/howitworks">How It Works...</a></p>
+<div class="welcome-banner">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Study. Share. Learn. Together.</h1>
+			<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
+		</div>
+		<div class="col-xs-12">
+			<a class="howitworks" href="./about/howitworks">How It Works...</a>
+		</div>
 	</div>
-	<div class="">
-		<a href="http://app.studymesh.com/register" class="btn btn-lg btn-primary">Sign Up for Free!</a>
+	<div class="row">
+		<div class="col-xs-12">
+			<a href="http://app.studymesh.com/register" class="btn btn-lg btn-primary">Sign Up for Free!</a>
+		</div>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-md-4">
-		<img src="<%= @document.pathToAssets %>/images/pile-of-books.png"/>
+	<div class="col-sm-4">
+		<img class="center-block" src="<%= @document.pathToAssets %>/images/pile-of-books.png"/>
 		<h3>Infinite books!</h3>
 		<p>Study just one book, a collection of a dozen, or thousands.</p>
 	</div>
-	<div class="col-md-4">
-		<img src="<%= @document.pathToAssets %>/images/collaborate-hands.png"/>
+	<div class="col-sm-4">
+		<img class="center-block" src="<%= @document.pathToAssets %>/images/collaborate-hands.png"/>
 		<h3>Divide and conquer!</h3>
 		<p>Track your studying yourself, or divide the work among two, ten or a thousand peers.</p>
 	</div>
-	<div class="col-md-4">
-		<img src="<%= @document.pathToAssets %>/images/study-languages.png"/>
+	<div class="col-sm-4">
+		<img class="center-block" src="<%= @document.pathToAssets %>/images/study-languages.png"/>
 		<h3>Any language!</h3>
 		<p>Books - and <i>this</i> site! - in English, French, Hebrew, Greek or any language you want.</p>
 	</div>
