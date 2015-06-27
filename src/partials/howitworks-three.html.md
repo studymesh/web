@@ -1,1 +1,1 @@
-Have your friends register for one - or a hundred - pages, chapters or whole books!
+Track who finished, send and receive alerts on the Web or mobile, download summaries, the power is yours!
