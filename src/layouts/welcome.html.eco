@@ -10,7 +10,7 @@ layout: default
 			<p>Study a book, a collection, or the entire Library of Congress. Split it up with friends and colleagues. Collaborate to amplify your knowledge.</p>
 		</div>
 		<div class="col-xs-12">
-			<a class="howitworks" href="./about/howitworks">How It Works...</a>
+			<p><a class="howitworks" href="./about/howitworks">How It Works...</a></p>
 		</div>
 	</div>
 	<div class="row">
