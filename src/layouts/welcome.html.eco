@@ -15,7 +15,7 @@ layout: default
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<a href="http://app.studymesh.com/register" class="btn btn-lg btn-primary">Sign Up for Free!</a>
+			<a href="http://app.studymesh.com/login" class="btn btn-lg btn-primary">Sign Up for Free!</a>
 		</div>
 	</div>
 </div>
