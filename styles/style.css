@@ -1,0 +1,185 @@
+/* for IE */
+body {
+	text-align: center;
+}
+div#container {
+	/* width: 920px; */
+	margin: 0 auto;
+	position: relative;
+	padding: 15px 30px;
+	min-height: 300px;
+	text-align: left;
+}
+
+div#header {
+}
+
+div#content {
+}
+div.welcome-banner {
+	background: url("../images/silver-grey-gradient.gif") repeat-x scroll 0 0 #ffffff;
+	background-size: auto 100%;
+	padding: 10 20;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+div#main {
+	background: none repeat scroll 0 0 white;
+	min-height: 300px;
+}
+div#header img {
+	border: 0 none;
+}
+a#login-link {
+	font-weight: bold;
+	border-color: #0085fe;
+  border-radius: 4px 4px 4px 4px;
+  border-style: solid;
+  border-width: 1px;
+}
+.navbar-nav > li > a{
+  padding-top:8px;
+  padding-bottom:8px;
+}
+.navbar-default {
+  background: none;
+  border: none;
+}
+div.features {
+	text-align: center;
+}
+div.feature {
+	width: 270px;
+	float: left;
+	padding: 5 10;
+}
+ul.menubar {
+	list-style-type: none;
+	padding: 5 0 5 5;
+}
+ul.menubar li {
+	display: inline;
+	padding: 0 11 0 13;
+}
+a, .navbar-default .navbar-nav > li > a {
+	text-decoration: none;
+	color: #0085fe;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0085aa;
+}
+a.howitworks {
+	color: #ff6600;
+	font-style: italic;
+	font-size: 1.2em;
+}
+
+div.step {
+	float:left;
+}
+div.step > p {
+	float:left;
+	width: 64%;
+}
+div.threesteps div.step {
+	width: 270px;
+}
+div.clear {
+	clear:both;
+}
+div.two-column > div.column {
+	float: left;
+}
+div.sixty {
+	width: 60%;
+}
+div.forty {
+	width: 39%;
+}
+div.main-register input.text,input.button {
+	font-size: 0.9em;
+	border-radius: 5px;
+	padding: 7px;
+	width: 200px;
+}
+div.main-register dd {
+	margin-left: 0px;
+	width: 300px;
+}
+div.main-register dl {
+	margin: 0 0 8 0;
+}
+input.button {
+	cursor: pointer;
+}
+div.main-register input.button {
+	background-color: #ffff00;
+}
+div.sliding-panels > div {
+	float: left;
+}
+div.sliding-panels {
+	width: 1500px;
+}
+div.sliding-panels-container {
+	width: 100%;
+	overflow: hidden;
+}
+div.register-step {
+	width: 300px;
+	margin-right: 200px;
+}
+div.main-register input.invalid {
+	background: url("../images/red-x-mark.png") no-repeat scroll 0 0 #ffffff;
+	background-position: 98% center;
+}
+div.main-register input.valid {
+	background: url("../images/green-check-mark.png") no-repeat scroll 0 0 #ffffff;
+	background-position: 98% center;
+}
+.green {
+	color: green;
+}
+.blue {
+	color: blue;
+}
+.red {
+	color: red;
+}
+div.main-register div.error {
+	display: none;
+	position: absolute;
+	padding: 3px;
+	background-color: #ffff99;
+	font-size: 14px;
+	margin-top: 10px;
+}
+div.header-element {
+	float: left;
+	margin: 16px 3px;
+	padding: 5px 0;
+}
+div#login-register-bar {
+	float: right;
+	clear: right;
+}
+div.navbar ul {
+    border-color: #A4A4A4;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    list-style-type: none;
+    padding: 5px 0;
+    white-space: nowrap;
+		margin: 0;
+}
+div.navbar ul li {
+    display: inline;
+    padding: 0 11px 0 13px;
+}
+.invisible {
+	display:none;
+}
