@@ -139,6 +139,15 @@ div.main-register input.valid {
 	background: url("../images/green-check-mark.png") no-repeat scroll 0 0 #ffffff;
 	background-position: 98% center;
 }
+.green {
+	color: green;
+}
+.blue {
+	color: blue;
+}
+.red {
+	color: red;
+}
 div.main-register div.error {
 	display: none;
 	position: absolute;
